@@ -1,4 +1,14 @@
 <div>
+    <style>
+        svg.w-5.h-5 {
+            width: 12px;
+        }
+
+        nav.flex.items-center.justify-between {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
     <div class='row'>
         <div class='col-md-12'>
             <div class="card m-3" style="background: #dbdbdb">
@@ -30,10 +40,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
+                            <hr>
                             <div class="m-3">
                                 {{ $list->links() }}
                             </div>
-
                         </div>
                     @endif
                 </div>

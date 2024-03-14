@@ -19,7 +19,7 @@ class BookingList extends Component
 
     #[Url()]
 
-    public int $rowPerPage = 5;
+    public int $rowPerPage = 10;
     public array $pageRow = [5, 10, 15, 30, 50, 100];
 
     public $filter ="upcoming";
