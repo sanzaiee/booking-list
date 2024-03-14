@@ -27,6 +27,7 @@ class BookingList extends Component
     public function render()
     {
         if($this->filter == "upcoming"){
+            $this->query = null;
             $this->today = ModelsBookingList::whereDate('start_time',Carbon::today()->format('Y-m-d'))->get();
             $this->tomorrow = ModelsBookingList::whereDate('start_time',Carbon::tomorrow()->format('Y-m-d'))->get();
         }
@@ -52,6 +53,8 @@ class BookingList extends Component
 
     public function applyFilter($filter)
     {
+        $this->reset();
+
         $this->filter = $filter;
     }
 

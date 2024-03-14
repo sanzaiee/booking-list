@@ -1,6 +1,6 @@
 <div class="container table-responsive py-5">
-    <h6>Today</h6>
-    <table class="table table-bordered table-hover">
+    <u><h6>Today</h6></u>
+    <table class="table table-bordered table-hover table-striped">
         <tbody>
             @foreach ($today as $index => $item)
                 @include('livewire.components.table-data')
@@ -12,13 +12,12 @@
 
 
 <div class="container table-responsive py-5">
-    <h6>Tomorrow</h6>
-    <table class="table table-bordered table-hover">
+    <u><h6>Tomorrow</h6></u>
+    <table class="table table-bordered table-hover table-striped">
         <tbody>
             @foreach ($tomorrow as $index => $item)
                  @include('livewire.components.table-data')
             @endforeach
         </tbody>
     </table>
-
 </div>

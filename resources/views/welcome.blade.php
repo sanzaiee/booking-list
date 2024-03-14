@@ -11,6 +11,8 @@
     <title>Booking List</title>
     @livewireStyles
 
+
+
   </head>
   <body>
     <div class="container">

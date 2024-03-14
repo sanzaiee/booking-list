@@ -22,7 +22,7 @@
                         @include('livewire.components.upcoming')
                     @else
                         <div class="container table-responsive py-5">
-                            <table class="table table-bordered table-hover">
+                            <table class="table table-bordered table-hover table-striped">
                                 <tbody>
                                     @foreach ($list as $index => $item)
                                         @include('livewire.components.table-data')
@@ -30,10 +30,12 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $list->links() }}
+                            <div class="m-3">
+                                {{ $list->links() }}
+                            </div>
+
                         </div>
                     @endif
-
                 </div>
             </div>
         </div>
