@@ -7,9 +7,7 @@
             @endforeach
         </tbody>
     </table>
-
 </div>
-
 
 <div class="container table-responsive py-5">
     <u><h6>Tomorrow</h6></u>

@@ -4,7 +4,6 @@
             <span>{{ $item['name'] }}</span>
             <small>{{ $item['email'] }}</small>
         </span>
-
     </td>
     <td>
         <span class="d-flex flex-column">

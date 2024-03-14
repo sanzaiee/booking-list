@@ -3,7 +3,6 @@
         svg.w-5.h-5 {
             width: 12px;
         }
-
         nav.flex.items-center.justify-between {
             display: flex;
             justify-content: space-between;
@@ -36,11 +35,9 @@
                                 <tbody>
                                     @foreach ($list as $index => $item)
                                         @include('livewire.components.table-data')
-
                                     @endforeach
                                 </tbody>
                             </table>
-
                             <hr>
                             <div class="m-3">
                                 {{ $list->links() }}
