@@ -23,6 +23,13 @@
                             placeholder="Search ..."
                             wire:model.live.debounce.500ms="query"
                         >
+
+                        <input
+                            type="month"
+                            class="form-control m-3"
+                            placeholder="Search ..."
+                            wire:model.live.debounce.500ms="month"
+                        >
                     @endif
                     <button type="button" class="btn btn-info m-3" wire:click="resetForm">Reset</button>
                 </div>

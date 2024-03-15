@@ -15,7 +15,7 @@ class BookingList extends Component
     public $today , $tomorrow;
 
     #[Url]
-    public ?string $query = null;
+    public ?string $query = null,$month = null;
 
     #[Url()]
 
@@ -28,6 +28,7 @@ class BookingList extends Component
     {
         if($this->filter == "upcoming"){
             $this->query = null;
+            $this->month = null;
             $this->today = ModelsBookingList::whereDate('start_time',Carbon::today()->format('Y-m-d'))->get();
             $this->tomorrow = ModelsBookingList::whereDate('start_time',Carbon::tomorrow()->format('Y-m-d'))->get();
         }
@@ -40,6 +41,14 @@ class BookingList extends Component
             ->when($this->query, function ($query, $search) {
                 $query->WhereDate('start_time', $search)
                 ->WhereDate('end_time', $search);
+            })
+            ->when($this->month, function ($query, $month) {
+                $filter =explode('-',$month);
+                $query
+                    ->WhereYear('start_time', $filter[0])
+                    ->WhereYear('end_time', $filter[0])
+                    ->WhereMonth('start_time', $filter[1])
+                    ->WhereMonth('end_time', $filter[1]);
             })
             ->latest()
             ->paginate($this->rowPerPage);
